@@ -1,0 +1,168 @@
+* {
+    /* set default margin and padding to zero */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* circular gradient page background */
+    background: radial-gradient(circle, rgba(234,205,163,1) 0%, rgba(192,146,87,1) 100%);
+    /* hide horizontal scroll */
+    overflow-x: hidden;
+}
+
+body {
+    /* text properties for header and book-list elements */
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+header {
+    /* main heading font and container styles */
+    width: 100%;
+    background-color: white;
+    border-bottom: 2px solid #57442b;
+    font-size: 19px;
+    color: #57442b;
+    text-align: center;
+}
+
+.book-list {
+    /* centered book list containers */
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.list-heading {
+    margin-top: 10px;
+    /* 'My List' heading borders */
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.book-count {
+    font-size: larger;
+    font-weight: 600;
+}
+
+/* book container styles for default container and user book row entries */
+.book-row, .book-container {
+    margin: 10px;
+    padding: 10px;
+    width: 60vw;
+    /* even distribution of elements in the book entry */
+    /* wraps elements when window size is reduced */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* white round-edged container with brown border */
+    background-color: white;
+    border: 2px solid #57442b;
+    border-radius: 10px;  
+}
+
+/* container elements style */
+.area1, .detail-container, .area3, .comment-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0.5%;
+}
+
+/* adjust divs to center in container */
+.area2, .comment-area {
+    margin-top: 11px;
+}
+
+/* general button style */
+.btn {
+    /*button text alignment*/
+    text-align: center;
+    vertical-align: middle;
+    /*button text properties*/
+    font-size: 0.9em;
+    font-weight: 550;
+    /*button properties*/
+    border-radius: 0.5em;
+    padding: 0.4em;
+    cursor: pointer;
+    /*button color*/
+    color: #57442b;
+    background: whitesmoke;
+}
+
+/* button text and background color change on mouseover */
+.btn:hover {
+    color: white;
+    background-color: #6f5636;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* button style for 'Remove book' button */
+.remove-book-btn {
+    color: #d02c2c;
+    border-color: #d02c2c;
+}
+
+/* 'Remove book' button text and background color change on mouseover*/
+.remove-book-btn:hover {
+    color:white;
+    background-color: #d02c2c;
+}
+
+/* cover image alignment in container */
+.image-area {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    padding: 2px;
+}
+
+/* cover image style properties */
+.cover-image {
+    width: 125px;
+    height: 195px;
+    margin-left: 20px;
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.book-ID {
+    margin: 3px;
+}
+
+/* uniform textarea styles */
+textarea {
+    padding: 5px;
+    /* round-edged containers with brown border */
+    border: 1.5px solid #57442b;
+    border-radius: 10px;
+}
+
+/* style change for disabled textareas */
+textarea:disabled {
+    color: black;
+    border: 1px solid #57442b;
+}
+
+/* drop-down menu styles */
+.status {
+    border: 1px solid #57442b;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.status:hover {
+    background-color: whitesmoke;
+}

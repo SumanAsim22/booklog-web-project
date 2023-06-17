@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booklog | My Personal Library</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <script src="./index.js" defer></script>
+    <!-- 'defer' causes the script to load parallel to the HTML content.
+         The script is executed only after the full page has been parsed. 
+         Otherwise, the script may be executed before the entire DOM has 
+         been parsed, leading to null errors on elements not yet loaded. -->
+</head>
+<body>
+    <!-- page header -->
+    <header>
+        <h2>Booklog</h2>
+    </header>
+    <!-- main page section -->
+    <div class="main">
+        <div class="book-list">
+            <!-- empty book container with input fields -->
+            <div class="book-container">
+                <!-- cover image search area -->
+                <div class="area1">
+                    <!--book cover image from API--> 
+                    <div class="image-area">
+                        <!-- default image -->
+                        <img src="./images/blank_image.jpg" alt="cover-image" class="cover-image">
+                    </div>
+                    <textarea name="ISBN" id="ISBN" class="book-ID" cols="20" rows="1" 
+                    style="resize: none;" placeholder="Enter book ISBN"></textarea>
+                    <button class="btn" id="search-btn">Search cover image</button>
+                </div>
+                <!-- input areas for book details -->
+                <div class="area2"> 
+                    <div class="detail-container">
+                        <label for="title">Title: </label>
+                        <textarea name="title" id="title" class="detail-input" cols="25" rows="2" 
+                        style="resize: none;" placeholder="Enter title" required></textarea>
+                    </div>
+                    <div class="detail-container">
+                        <label for="author">Author(s): </label>
+                        <textarea name="author" id="author" class="detail-input" cols="25" rows="2" 
+                        style="resize: none;" placeholder="Enter author(s)"></textarea>
+                    </div>
+                    <div class="detail-container">
+                        <label for="genre">Genre(s): </label>
+                        <textarea name="genre" id="genre" class="detail-input" cols="25" rows="2" 
+                        style="resize: none;" placeholder="Enter genre(s)"></textarea>
+                    </div>
+                    <div class="detail-container">
+                        <label for="status">Reading Status: </label>
+                        <!-- drop-down menu for selecting reading status -->
+                        <div class="status-selection">
+                            <select class="status" name="status"><!--drop-down menu-->
+                                <option value="Reading" selected>Reading</option><!--default selection-->
+                                <option value="Completed">Completed</option>
+                                <option value="To Be Read">To Be Read</option>
+                                <option value="Did Not Finish">Did Not Finish</option>
+                                <option value="Wishlisted">Wishlisted</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- comment area and button elements -->
+                <div class="area3">
+                    <div class="comment-area">
+                        <textarea name="comments" id="comments" cols="25" rows="11" style="resize: none;"
+                        placeholder="Jot down your thoughts here!"></textarea>
+                    </div> 
+                    <!--button with 'add to list' functionality-->
+                    <button type="button" class="btn" id="add-book-btn">Add book</button>
+                </div>
+            </div>
+            <h2 class="list-heading">My List</h2>
+            <!-- book count display -->
+            <span class="book-count">0</span>
+            <!-- container for book entries added by user -->
+            <div class="book-entries">
+                <!-- layout elements for each book entry row and edit, update, and remove buttons
+                are specified in the script -->
+            </div>
+        </div> <!--book list end-->
+    </div> <!-- main end -->
+</body>
+</html>
