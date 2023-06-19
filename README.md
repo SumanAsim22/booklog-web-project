@@ -1,4 +1,4 @@
-# Booklog - Book Blog App 
+# Booklog - book blog app
 
 ## Description
 Welcome to the Booklog application! This project is a simple web application designed as a book blogging app.
