@@ -16,4 +16,4 @@ The aim of the app is to become a central space for creating and managing person
 2. Click Download ZIP.
 3. Extract the downloaded files in your workspace folder.
 4. Open index.html with your web browser.
-5. To test all application functionalities, download and use the booklog-test-case file.
+5. To test all application functionalities, download and use test case files 001 and 002.
