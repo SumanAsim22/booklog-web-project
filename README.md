@@ -2,7 +2,7 @@
 
 ## Description
 Welcome to the Booklog application! This project is a simple web application designed as a book blogging app.
-With this app, a user can create book entries with a cover image, title, author, genres, reading status, and comments and maintain a modifiable book list on their device.
+With this app, a user can create book entries with a cover image, title, author, genres, reading status, and comments and can maintain a modifiable book list on their device.
 The application is built upon standard frontend technologies and utilizes a free API service to retrieve book cover images.
 
 ## Technologies
