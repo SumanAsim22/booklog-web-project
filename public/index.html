@@ -84,5 +84,27 @@
             </div>
         </div> <!--book list end-->
     </div> <!-- main end -->
+    <script>
+        //set storage to persistent to prevent data eviction under storage pressure 
+        if (navigator.storage && navigator.storage.persisted) {
+            //request browser permission to use persistent storage
+            /* Chrome and Chromium-based browsers automatically handle the 
+             * permission request without prompting the user.
+             * Firefox prompts the user with an alert to decide if 
+             * persistent storage should be enabled.
+             */
+            //await Promise and receive boolean result for permission granted
+            navigator.storage.persist().then((isPersistent) => {
+                if (isPersistent) { //if permission is granted
+                    console.log("Storage will not be cleared except by explicit user action");
+                } 
+                else { //if permission is rejected
+                    console.log("Storage may be cleared by the browser under storage pressure.");
+                }
+                //log current persistence status
+                console.log('Persistent storage activated: ' + isPersistent);
+            });
+        }
+    </script>
 </body>
 </html>

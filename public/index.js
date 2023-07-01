@@ -1,4 +1,4 @@
-//load localStorage contents with key 'books' into bookArray variable
+//load local storage contents with key 'books' into bookArray variable
 //if items exist, parse JSON and store in array, otherwise store empty array
 let bookArray = localStorage.getItem('books') ? 
 JSON.parse(localStorage.getItem('books')) : [];
@@ -62,13 +62,13 @@ async function getCover(event) {
             let coverImage = bookContainer.getElementsByClassName('cover-image')[0];
             //update cover image source for book container with retrieved value
             coverImage.setAttribute('src', resData.source_url);
-
+            
             let bookEntries = document.getElementsByClassName('book-entries')[0];
             let bookRows = bookEntries.getElementsByClassName('book-row');
             //iterate through all book entries to match corresponding bookArray element
             for(let i = 0; i < bookRows.length; i++) {
                 if(bookRows[i] === bookContainer) {
-                    //update cover image source with retrieved value for book element in localStorage 
+                    //update cover image source with retrieved value for book element in local storage 
                     bookArray[i].imageSrc = resData.source_url;
                     button.textContent = 'Search cover image';
                     return;
@@ -130,7 +130,7 @@ function addBookClicked(event) {
         }
     }
 
-    //save book to localStorage
+    //save book to local storage
     storeObject(imageSrc, title, author, genre, status, comments);
 
     //pass retrieved values as arguments to function for adding the book container
@@ -213,7 +213,7 @@ function addBookEntry(imageSrc, title, author, genre, status, comments) {
 function removeBookEntry(event) {
     let button = event.target;
     let mainContainer = button.parentElement.parentElement.parentElement;
-    //call removeObject function to remove book object from localStorage
+    //call removeObject function to remove book object from local storage
     removeObject(mainContainer);
     //remove book row div from webpage
     mainContainer.remove();
@@ -330,7 +330,7 @@ function updateBookEntry(event) {
 
     let bookEntries = document.getElementsByClassName('book-entries')[0];
     let bookRows = bookEntries.getElementsByClassName('book-row');
-    //iterate through all row div entries to match original book element in localStorage
+    //iterate through all row div entries to match original book element in local storage
     for(let i = 0; i < bookRows.length; i++) {
         if(bookRows[i] === bookEntry) {
             let index = i;
@@ -341,15 +341,15 @@ function updateBookEntry(event) {
         }
     }
     let index = sendIndex();
-    //call updateObject to update original book object in localStorage with respective values
+    //call updateObject to update original book object in local storage with respective values
     /* The retrieved index value is passed as an argument in order to 
-     * locate and update the correct book element in localStorage */
+     * locate and update the correct book element in local storage */
     updateObject(index, title, author, genre, statusValue, comments);
 
     console.log('Update button successful');
 }
 
-//add new book object to localStorage
+//add new book object to local storage
 function storeObject(imageSrc, title, author, genre, status, comments) {
     //create book object
     const book = {
@@ -357,11 +357,11 @@ function storeObject(imageSrc, title, author, genre, status, comments) {
     };
     //add book object to bookArray
     bookArray.push(book);
-    //convert bookArray to a JSON string and save it in localStorage with key 'books'
+    //convert bookArray to a JSON string and save it in local storage with key 'books'
     localStorage.setItem('books', JSON.stringify(bookArray));
 }
 
-//remove book object from localStorage
+//remove book object from local storage
 function removeObject(mainContainer) {
     let title = mainContainer.getElementsByClassName('book-entry-title')[0].value;
     let author = mainContainer.getElementsByClassName('book-entry-author')[0].value;
@@ -372,13 +372,13 @@ function removeObject(mainContainer) {
         if(bookTitle === title && bookAuthor === author) {
             //remove element from array at specified index
             bookArray.splice(i, 1);
-            //reset bookArray to update localStorage
+            //reset bookArray to update local storage
             localStorage.setItem('books', JSON.stringify(bookArray));
         }
     }
 }
 
-//update existing book object in localStorage 
+//update existing book object in local storage 
 function updateObject(index, title, author, genre, statusValue, comments) {
     //update element values at specified index
     bookArray[index].title = title.value;
@@ -386,6 +386,6 @@ function updateObject(index, title, author, genre, statusValue, comments) {
     bookArray[index].genre = genre.value;
     bookArray[index].status = statusValue;
     bookArray[index].comments = comments.value;
-    //reset bookArray to update localStorage
+    //reset bookArray to update local storage
     localStorage.setItem('books', JSON.stringify(bookArray));
 }
