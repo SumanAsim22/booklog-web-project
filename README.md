@@ -14,5 +14,5 @@ The application is built upon standard frontend technologies and utilizes a free
 1. Above the list of files, click Code. 
 2. Click Download ZIP.
 3. Extract the downloaded files in your workspace folder.
-4. Open index.html with your web browser.
+4. Navigate to the public folder and open index.html with your web browser.
 5. To test all application functionalities, download and use test case files 001 and 002.
