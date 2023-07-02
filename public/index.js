@@ -120,9 +120,9 @@ function addBookClicked(event) {
     //iterate through all entries
     for (let i = 0; i < bookEntryTitles.length; i++) {
         //compare existing titles to new entry added
-        if (bookEntryTitles[i].innerHTML == title ) {
+        if (bookEntryTitles[i].value === title ) {
             //if title is same, check for author
-            if((bookEntryAuthors[i].innerHTML == author) || author == '') {
+            if((bookEntryAuthors[i].value === author) || author === '') {
                 //if author also matches or is empty, alert user and exit function
                 alert('This book is already added to the list.');
                 return;
